@@ -6,6 +6,7 @@
 		<meta charset="UTF-8">
 
         <title>@yield('title')</title>
+		<link href="{{asset('asset/img/gallery/logo.png.png')}}" rel="icon">
 		<meta name="keywords" content="HTML5 Admin Template" />
 		<meta name="description" content="JSOFT Admin - Responsive HTML5 Template">
 		<meta name="author" content="JSOFT.net">
@@ -23,7 +24,7 @@
 		<!-- Vendor CSS -->
 
 		<link rel="stylesheet" href="{{asset('assets/vendor/bootstrap/css/bootstrap.css')}}" />
-		<link rel="stylesheet" href="{{ asset('assets/vendor/bootstrap/css/bootstrap.min.css')}}">
+		<link rel="stylesheet" href="{{asset('assets/vendor/bootstrap/css/bootstrap.min.css')}}">
 		<link rel="stylesheet" href="{{asset('assets/vendor/font-awesome/css/font-awesome.css')}}" />
 		<link rel="stylesheet" href="{{asset('assets/vendor/magnific-popup/magnific-popup.css')}}" />
 		<link rel="stylesheet" href="{{asset('assets/vendor/bootstrap-datepicker/css/datepicker3.css')}}" />
