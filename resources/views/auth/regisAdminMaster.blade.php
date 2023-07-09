@@ -30,7 +30,7 @@
 										<h2 class="panel-title">Registrasi</h2>
 									</header>
 									<div class="panel-body">
-										<form class="form-horizontal form-bordered" action="" method="post">
+										<form class="form-horizontal form-bordered" action="/auth/master/register" method="post">
 											@csrf
 											<div class="form-group">
 												<label class="col-md-3 control-label" for="nama">Nama</label>
@@ -51,6 +51,14 @@
 												<div class="col-md-6">
 													<section class="form-group-vertical">
 														<input required class="form-control last" type="password" name="password" id="password" placeholder="Password">
+													</section>
+												</div>
+											</div>
+											<div class="form-group">
+												<label class="col-md-3 control-label" for="conf_password">Konfirmasi Password</label>
+												<div class="col-md-6">
+													<section class="form-group-vertical">
+														<input required class="form-control last" type="password" name="conf_password" id="conf_password" placeholder="Konfirmasi Password">
 													</section>
 												</div>
 											</div>

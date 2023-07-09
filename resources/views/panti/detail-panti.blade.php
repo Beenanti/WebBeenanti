@@ -40,66 +40,54 @@
                     <div class="row g-3 panel-body">
                         <h5 style="font-size: 13pt;">Data Panti Asuhan</h5><hr style="margin-top:-8px" >
                         <div class="col-md-5">
-                            <label for="kelebihan" >Nama Pengelola</label>
-                            <input class="form-control" placeholder="Ceritakan kelebihan Anda" name="nama_pengelola" value="" readonly>
+                            <label for="nama_pengelola" >Nama Pengelola </label>
+                            <input class="form-control" placeholder="Nama Pengelola" name="nama_pengelola" value="{{$panti['nama_pimpinan']}}" readonly>
                         </div>
                         <div class="col-md-5">
-                            <label for="email" class="form-label">Nama panti</label>
-                            <input type="email" class="form-control" name="nama_panti" value="" readonly>
+                            <label for="nama_panti" class="form-label">Nama panti</label>
+                            <input type="email" class="form-control" name="nama_panti" value="{{$panti['nama_panti']}}" readonly>
                         </div>
                         <div class="col-md-5">
                             <br>
                             <label for="email" class="form-label">Nama Pimpinan Panti</label>
-                            <input type="email" class="form-control" name="nama_pimpinan" value="" readonly>
+                            <input type="email" class="form-control" name="nama_pimpinan" value="{{$panti['nama_pimpinan']}}" readonly>
                         </div>
                     </div>
                     <div class="row g-3 panel-body">
-                        {{-- <h5 style="font-size: 13pt;">Respon Maintenance </h5><hr style="margin-top:-8px" > --}}
                         <div class="col-md-4">
                             <label for="email" class="form-label">No. Telephone</label>
-                            <input type="email" class="form-control" name="no_hp" value="" readonly>
+                            <input type="email" class="form-control" name="no_hp" value="{{$panti['nohp']}}" readonly>
                         </div>
                         <div class="col-md-6">
                             <label for="email" class="form-label">Email Panti</label>
-                            <input type="email" class="form-control" name="email" value="" readonly>
+                            <input type="email" class="form-control" name="email" value="{{$panti['email']}}" readonly>
                         </div>
                         <div class="col-md-6">
                             <br>
                             <label for="email" class="form-label">Sosial Media Panti</label>
-                            <input type="email" class="form-control" name="sosmed" value="" readonly>
+                            <input type="email" class="form-control" name="sosmed" value="{{$panti['sosmed']}}" readonly>
                         </div>
                     </div>
                     <div class="row g-3 panel-body">
-                        {{-- <h5 style="font-size: 13pt;">Maintenance Teknisi</h5><hr style="margin-top:-8px" > --}}
                         <div class="col-md-4">
                             <label for="email" class="form-label">Jumlah Anak Asuh</label>
-                            <input type="text" class="form-control" name="jmlh_anak" value="" readonly>
+                            <input type="text" class="form-control" name="jmlh_anak" value="{{$panti['jumlah_anak']}}" readonly>
                         </div>
                         <div class="col-md-4">
                             <label for="email" class="form-label">Jumlah Pengurus Panti</label>
-                            <input type="text" class="form-control" name="jmlh_pengurus" value="" readonly>
+                            <input type="text" class="form-control" name="jmlh_pengurus" value="{{$panti['nama_pimpinan']}}" readonly>
                         </div>
                         <div class="col-md-4">
                             <label for="email" class="form-label">Jenis Panti</label>
-                            <input  class="form-control" name="jenis_panti"  readonly>
-                        </div>
-                        <div class="col-md-4">
-                            <br>
-                            <label for="email" class="form-label">Status Panti</label> <br>
-                            {{-- @if ($data->status_maintenance=='Dilaporkan') --}}
-                            <!-- button detail -->
-                            <button type="button" class="mb-xs mt-xs mr-xs btn btn-success">Aktif</button>
-                            {{-- @else --}}
-                                    <button type="button" class="mb-xs mt-xs mr-xs btn btn-danger">Tidak Aktif</button>
-                            {{-- @endif --}}
+                            <input  class="form-control" name="jenis_panti" value="{{$panti['jenis']}}"  readonly>
                         </div>
                     </div>
                     <div class="row g-3 panel-body">
                         <h5 style="font-size: 13pt;">Action</h5><hr style="margin-top:-8px" >
                             <button type="button" class="mb-xs mt-xs mr-xs btn btn-warning">Edit</button>
                     </div>
-
                     </div>
+
                 </section>
         
                

@@ -21,25 +21,30 @@
                                 @else --}}
                                 <li class="nav-parent">
                                     <a>
-                                        <i class="fa fa-envelope" aria-hidden="true"></i>
+                                        <i class="fa fa-user" aria-hidden="true"></i>
                                         <span>User</span>
                                     </a>
                                     <ul class="nav nav-children">
                                         <li>
-                                            <a href="/list-user">
+                                            <a href="/listUser">
                                             Daftar User
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="/user/admin-panti">
+                                            Daftar Admin
                                             </a>
                                         </li>
                                     </ul>
                                 </li>
                                 <li class="nav-parent">
                                     <a>
-                                        <i class="fa fa-wrench" aria-hidden="true"></i>
+                                        <i class="fa fa-home" aria-hidden="true"></i>
                                         <span>Panti</span>
                                     </a>
                                     <ul class="nav nav-children">
                                         <li>
-                                            <a href="/listPanti">
+                                            <a href="/panti">
                                             Daftar Panti Asuhan 
                                             </a>
                                         </li>
