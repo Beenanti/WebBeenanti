@@ -18,7 +18,7 @@ use App\Http\Controllers\PantiController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
 Route::get('/login',[AuthController::class, 'index'])->name('login');
 Route::post('/login',[AuthController::class, 'checkLogin'])->name('checklogin');

@@ -6,6 +6,7 @@
 		<meta charset="UTF-8">
 
         <title>@yield('title')</title>
+		<link href="{{asset('asset/img/gallery/logo.png.png')}}" rel="icon">
 		<meta name="keywords" content="HTML5 Admin Template" />
 		<meta name="description" content="JSOFT Admin - Responsive HTML5 Template">
 		<meta name="author" content="JSOFT.net">
