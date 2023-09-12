@@ -37,32 +37,32 @@
                         <h2 class="panel-title">Daftar Pengguna</h2>
                     </header>
                     <div class="panel-body">
-                                <table class="table table-bordered table-striped mb-none">
+                                <table class="table table-bordered table-striped mb-none" id="datatable-tabletools">
                                     <thead>
                                         <tr>
-                                            <th>NIK</th>
+                                            <!-- <th>NIK</th> -->
                                             <th>Nama Pengguna</th>
                                             <th>Jenis Kelamin</th>
-                                            <th>No Telephone</th>
                                             <th>Email</th>
-                                            <th>Alamat</th>
+                                            <th>Status</th>
+                                            <th>Action</th>
                                         </tr>
                                     </thead>
-{{--                                     
+                                    
                                     <tbody>
-                                        **hanya menampilkan user masyarakat
-                                        @foreach ($dtStatus as $item)
+                                        <!-- **hanya menampilkan user masyarakat -->
+                                        @foreach ($data['data_user'] as $item)
                                         <tr class="gradeX">
-                                            <td>{{$item->nik}}</td>
-                                            <td>{{$item->nama}}</td>
-                                            <td>{{$item->jenis_kelamin}}</td>
-                                            <td>{{$item->no_hp}}</td>
-                                            <td>{{$item->email}}</td>
-                                            <td>{{$item->alamat}}</td>
+                                            <td>{{$item['nama']}}</td>
+                                            <td>{{$item['jenis_kelamin']}}</td>
+                                            <td>{{$item['email']}}</td>
+                                            <td>{{$item['status']}}</td>
+                                            <td class="actions">
+                                            </td>
                                         </tr>
                                         @endforeach 
                                         
-                                    </tbody> --}}
+                                    </tbody> 
                                 </table>
                                 
                     </div>

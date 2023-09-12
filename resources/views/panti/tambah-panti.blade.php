@@ -36,7 +36,7 @@
         
                         <h2 class="panel-title">Tambah Panti Asuhan</h2>
                     </header>
-                    <form class="form-horizontal form-bordered" action="" method="post">
+                    <form class="form-horizontal form-bordered" action="/tambahPanti" method="post">
                     {{ csrf_field()}}
                     <div class="panel-body">
 
@@ -45,11 +45,8 @@
                             <div class="col-md-6">
                                 <select class="form-control populate" name="pengelola_panti"  required>
                                     <option label="NIK - Nama" disabled selected></option>
-                                    <option value="">12345678 - Bagus Hidayah</option>
-                                    <option value="">12342354 - Dimas Mahmudi</option>
-                                    {{-- @foreach ($barang as $item)
-                                    <option value="{{ $item->id_serial_number }}">{{$item->nama}} - {{$item->model_barang}} - {{$item->id_serial_number}}</option>
-                                    @endforeach  --}}
+                                    <option value="ya ini nama">12345678 - Bagus Hidayah</option>
+                                    <option value="ya ini nama 1">12342354 - Dimas Mahmudi</option>
                                 </select>
                             </div>
                         </div>
@@ -101,26 +98,19 @@
                             <div class="col-md-6">
                                 <select class="form-control populate" name="jenis_panti"  required>
                                     <option label="Jenis Panti" disabled selected></option>
-                                    <option value="">Panti Anak</option>
-                                    <option value="">Panti Jompo</option>
-                                    <option value="">Panti Swasta</option>
-                                    {{-- @foreach ($barang as $item)
-                                    <option value="{{ $item->id_serial_number }}">{{$item->nama}} - {{$item->model_barang}} - {{$item->id_serial_number}}</option>
-                                    @endforeach  --}}
+                                    <option value="1">Panti Anak</option>
+                                    <option value="2">Panti Jompo</option>
+                                    <option value="3">Panti Swasta</option>
                                 </select>
                             </div>
                         </div> 
-                        {{-- Hanya untuk admin master, pada admin panti tidak ada memasukkan status panti --}}
                         <div class="form-group">
                             <label class="col-md-3 control-label">Status Panti</label>
                             <div class="col-md-6">
                                 <select class="form-control populate" name="status_panti"  required>
                                     <option label="Status Panti" disabled selected></option>
-                                    <option value="">Aktif</option>
-                                    <option value="">Tidak Aktif</option>
-                                    {{-- @foreach ($barang as $item)
-                                    <option value="{{ $item->id_serial_number }}">{{$item->nama}} - {{$item->model_barang}} - {{$item->id_serial_number}}</option>
-                                    @endforeach  --}}
+                                    <option value="1">Aktif</option>
+                                    <option value="2">Tidak Aktif</option>
                                 </select>
                             </div>
                         </div> 

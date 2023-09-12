@@ -30,8 +30,26 @@
 										<h2 class="panel-title">Registrasi</h2>
 									</header>
 									<div class="panel-body">
-										<form class="form-horizontal form-bordered" action="" method="post">
+										<form class="form-horizontal form-bordered" action="/user/admin-panti/register" method="post">
 											@csrf
+											<div class="form-group">
+												<label class="col-md-3 control-label" for="panti_asuhan">Panti Asuhan</label>
+												<div class="col-md-6">
+													<select required name="panti_asuhan" id="panti_asuhan" class="form-control mb-md">
+														<option hidden disabled selected><i>Panti Asuhan</i></option>
+														<option value="p03">PA Kerenz</option>
+														<option value="p11">PA Aisiah</option>
+													</select>
+												</div>
+											</div>
+											<div class="form-group">
+												<label class="col-md-3 control-label" for="email">E-Mail</label>
+												<div class="col-md-6">
+													<section class="form-group-vertical">
+														<input required class="form-control" type="email" name="email" id="email" class="form-control @error('email') is-invalid @enderror" placeholder="Email">
+													</section>
+												</div>
+											</div>
 											<div class="form-group">
 												<label class="col-md-3 control-label" for="nik">NIK</label>
 												<div class="col-md-6">
@@ -42,6 +60,27 @@
 												<label class="col-md-3 control-label" for="nama">Nama Pengelola Panti</label>
 												<div class="col-md-6">
 													<input  type="text" id="nama" name="nama" class="form-control @error('nama') is-invalid @enderror" placeholder="Nama Pengelola Panti" required>
+												</div>
+											</div>
+											<div class="form-group">
+												<label class="col-md-3 control-label" for="nohp">Phone</label>
+													<div class="col-md-6 control-label">
+														<div class="input-group">
+															<span class="input-group-addon">
+																<i class="fa fa-phone"></i>
+															</span>
+															<input required type="number" id="nohp" name="nohp" placeholder="08xxxxxxxxxx" class="form-control">
+														</div>
+													</div>
+											</div>
+											<div class="form-group">
+												<label class="col-md-3 control-label" for="jenis_kelamin">Jenis Kelamin</label>
+												<div class="col-md-6">
+													<select required name="jenis_kelamin" id="jenis_kelamin" class="form-control mb-md">
+														<option hidden disabled selected><i>Jenis Kelamin</i></option>
+														<option value="Laki-laki">Laki-laki</option>
+														<option value="Perempuan">Perempuan</option>
+													</select>
 												</div>
 											</div>
 											<div class="form-group">
@@ -57,45 +96,16 @@
 												</div>
 											</div>
 											<div class="form-group">
-												<label class="col-md-3 control-label" for="jenis_kelamin">Jenis Kelamin</label>
-												<div class="col-md-6">
-													<select required name="jenis_kelamin" id="jenis_kelamin" class="form-control mb-md">
-														<option hidden disabled selected><i>Jenis Kelamin</i></option>
-														<option value="lk">Laki-laki</option>
-														<option value="p">Perempuan</option>
-													</select>
-												</div>
-											</div>
-											<div class="form-group">
 												<label class="col-md-3 control-label" for="alamat">Alamat Lengkap</label>
 												<div class="col-md-6">
 													<input  type="text" id="alamat" name="alamat" class="form-control @error('alamat') is-invalid @enderror" placeholder="Alamat Lengkap" required>
 												</div>
 											</div>
 											<div class="form-group">
-												<label class="col-md-3 control-label" for="nohp">Phone</label>
-													<div class="col-md-6 control-label">
-														<div class="input-group">
-															<span class="input-group-addon">
-																<i class="fa fa-phone"></i>
-															</span>
-															<input required type="number" id="nohp" name="nohp" placeholder="08xxxxxxxxxx" class="form-control">
-														</div>
-													</div>
-											</div>
-											<div class="form-group">
-												<label class="col-md-3 control-label" for="email">E-Mail</label>
+												<label class="col-md-3 control-label" for="pekerjaan">Pekerjaan</label>
 												<div class="col-md-6">
 													<section class="form-group-vertical">
-														<input required class="form-control" type="email" name="email" id="email" class="form-control @error('email') is-invalid @enderror" placeholder="Email">
-													</section>
-												</div>
-											</div>
-											<div class="form-group">
-												<label class="col-md-3 control-label" for="foto">Upload Foto</label>
-												<div class="col-md-6">
-													<section class="form-group-vertical">
-														<input required class="form-control" type="file" name="foto" id="foto" class="form-control @error('foto') is-invalid @enderror" placeholder="Email">
+														<input required class="form-control last" type="text" name="pekerjaan" id="pekerjaan" placeholder="Password">
 													</section>
 												</div>
 											</div>
@@ -104,6 +114,14 @@
 												<div class="col-md-6">
 													<section class="form-group-vertical">
 														<input required class="form-control last" type="password" name="password" id="password" placeholder="Password">
+													</section>
+												</div>
+											</div>
+											<div class="form-group">
+												<label class="col-md-3 control-label" for="conf_password">Konfirmasi Password</label>
+												<div class="col-md-6">
+													<section class="form-group-vertical">
+														<input required class="form-control last" type="password" name="conf_password" id="conf_password" placeholder="Password">
 													</section>
 												</div>
 											</div>

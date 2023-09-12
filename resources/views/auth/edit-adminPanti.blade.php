@@ -30,36 +30,37 @@
 										<h2 class="panel-title">Edit Admin Panti</h2>
 									</header>
 									<div class="panel-body">
-										<form class="form-horizontal form-bordered" action="" method="post">
-											@csrf
+										<form class="form-horizontal form-bordered" action="/user/admin-panti/{{$adminPanti['email']}}/edit" method="post">
+										@method('patch')
+										@csrf
 											<div class="form-group">
 												<label class="col-md-3 control-label" for="nik">NIK</label>
 												<div class="col-md-6">
-													<input  type="text" id="nik" name="nik" class="form-control @error('nik') is-invalid @enderror" placeholder="NIK (Nomor Induk Kependudukan)" required>
+													<input  type="text" id="nik" name="nik" value="{{$adminPanti['nik']}}"   class="form-control @error('nik') is-invalid @enderror" placeholder="NIK (Nomor Induk Kependudukan)" required>
 												</div>
 											</div>
 											<div class="form-group">
 												<label class="col-md-3 control-label" for="nama">Nama Pengelola Panti</label>
 												<div class="col-md-6">
-													<input  type="text" id="nama" name="nama" class="form-control @error('nama') is-invalid @enderror" placeholder="Nama Pengelola Panti" required>
+													<input  type="text" id="nama" name="nama" value="{{$adminPanti['nama']}}"   class="form-control @error('nama') is-invalid @enderror" placeholder="Nama Pengelola Panti" required>
 												</div>
 											</div>
 											<div class="form-group">
 												<label class="col-md-3 control-label" for="tempat_lahir">Tempat Lahir</label>
 												<div class="col-md-6">
-													<input  type="text" id="tempat_lahir" name="tempat_lahir" class="form-control @error('tempat_lahir') is-invalid @enderror" placeholder="Tempat Lahir" required>
+													<input  type="text" id="tempat_lahir" name="tempat_lahir" value="{{$adminPanti['tempat_lahir']}}"   class="form-control @error('tempat_lahir') is-invalid @enderror" placeholder="Tempat Lahir" required>
 												</div>
 											</div>
 											<div class="form-group">
 												<label class="col-md-3 control-label" for="tgl_lahir">Tanggal Lahir</label>
 												<div class="col-md-6">
-													<input  type="date" id="tgl_lahir" name="tgl_lahir" class="form-control @error('tgl_lahir') is-invalid @enderror" placeholder="Tanggal Lahir" required>
+													<input  type="date" id="tgl_lahir" name="tgl_lahir" value="{{$adminPanti['tgl_lahir']}}"   class="form-control @error('tgl_lahir') is-invalid @enderror" placeholder="Tanggal Lahir" required>
 												</div>
 											</div>
 											<div class="form-group">
 												<label class="col-md-3 control-label" for="jenis_kelamin">Jenis Kelamin</label>
 												<div class="col-md-6">
-													<select required name="jenis_kelamin" id="jenis_kelamin" class="form-control mb-md">
+													<select required name="jenis_kelamin" id="jenis_kelamin" value="{{$adminPanti['jenis_kelamin']}}"   class="form-control mb-md">
 														<option hidden disabled selected><i>Jenis Kelamin</i></option>
 														<option value="lk">Laki-laki</option>
 														<option value="p">Perempuan</option>
@@ -69,7 +70,7 @@
 											<div class="form-group">
 												<label class="col-md-3 control-label" for="alamat">Alamat Lengkap</label>
 												<div class="col-md-6">
-													<input  type="text" id="alamat" name="alamat" class="form-control @error('alamat') is-invalid @enderror" placeholder="Alamat Lengkap" required>
+													<input  type="text" id="alamat" name="alamat" value="{{$adminPanti['alamat']}}"   class="form-control @error('alamat') is-invalid @enderror" placeholder="Alamat Lengkap" required>
 												</div>
 											</div>
 											<div class="form-group">
@@ -79,7 +80,7 @@
 															<span class="input-group-addon">
 																<i class="fa fa-phone"></i>
 															</span>
-															<input required type="number" id="nohp" name="nohp" placeholder="08xxxxxxxxxx" class="form-control">
+															<input required type="number" id="nohp" name="nohp" value="{{$adminPanti['no_hp']}}"   placeholder="08xxxxxxxxxx" class="form-control">
 														</div>
 													</div>
 											</div>
@@ -87,7 +88,7 @@
 												<label class="col-md-3 control-label" for="email">E-Mail</label>
 												<div class="col-md-6">
 													<section class="form-group-vertical">
-														<input required class="form-control" type="email" name="email" id="email" class="form-control @error('email') is-invalid @enderror" placeholder="Email">
+														<input required class="form-control" type="email" name="email" id="email" value="{{$adminPanti['email']}}"   class="form-control @error('email') is-invalid @enderror" placeholder="Email">
 													</section>
 												</div>
 											</div>
@@ -95,15 +96,15 @@
 												<label class="col-md-3 control-label" for="foto">Upload Foto</label>
 												<div class="col-md-6">
 													<section class="form-group-vertical">
-														<input required class="form-control" type="file" name="foto" id="foto" class="form-control @error('foto') is-invalid @enderror" placeholder="Email">
+														<input  class="form-control" type="file" name="foto" id="foto" value="{{$adminPanti['foto']}}"  class="form-control @error('foto') is-invalid @enderror" placeholder="Email">
 													</section>
 												</div>
 											</div>
 											<div class="form-group">
-												<label class="col-md-3 control-label" for="password">Password</label>
+												<label class="col-md-3 control-label" for="pekerjaan">Pekerjaan</label>
 												<div class="col-md-6">
 													<section class="form-group-vertical">
-														<input required class="form-control last" type="password" name="password" id="password" placeholder="Password">
+														<input required class="form-control last" type="text" name="pekerjaan" id="pekerjaan" value="{{$adminPanti['pekerjaan']}}"   placeholder="Password">
 													</section>
 												</div>
 											</div>
@@ -120,3 +121,4 @@
 				</section>
 @endsection
 <!-- end: page -->
+

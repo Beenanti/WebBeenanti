@@ -40,13 +40,13 @@
                         <div class="row">
                                     <div class="col-sm-6">
                                         <div class="mb-md">
-                                            <a href="/registerAdmin">
+                                            <a href="/registerAdminPanti">
                                             <button id="addToTable" class="btn btn-dark">Tambah <i class="fa fa-plus"></i></button>
                                             </a>
                                         </div>
                                     </div>
                                 </div>
-                                <table class="table table-bordered table-striped mb-none">
+                                <table class="table table-bordered table-striped mb-none" id="datatable-tabletools">
                                     <thead>
                                         <tr>
                                             <th>NIK</th>
@@ -57,26 +57,26 @@
                                             <th>Action</th>
                                         </tr>
                                     </thead>
-{{--                                     
+                                    
                                     <tbody>
-                                        **hanya menampilkan user masyarakat
-                                        @foreach ($dtStatus as $item)
+                                        <!-- **hanya menampilkan admin  -->
+                                        @foreach ($data['data_admin'] as $item)
                                         <tr class="gradeX">
-                                            <td>{{$item->nik}}</td>
-                                            <td>{{$item->nama}}</td>
-                                            <td>{{$item->jenis_kelamin}}</td>
-                                            <td>{{$item->no_hp}}</td>
-                                            <td>{{$item->email}}</td>
+                                            <td>{{$item['nik']}}</td>
+                                            <td>{{$item['nama']}}</td>
+                                            <td>{{$item['jenis_kelamin']}}</td>
+                                            <td>{{$item['no_hp']}}</td>
+                                            <td>{{$item['email']}}</td>
                                             <td class="actions">
-                                                <a href="/update-status/{{ $item->id_status_maintenance}}" class="on-default edit-row">
+                                                <a href="/user/admin-panti/{{ $item['email']}}" class="on-default edit-row">
                                                     <button class="btn-xs btn-warning"><i class="fa fa-pencil"></i> Edit</button></a>
-                                                <a href="{{url('detail-data-panti',$item->id_panti)}}"  class="on-default detail-row">
-                                                    <button class="btn-xs btn-dark"><i class="fa fa-trash-o"></i> Detail</button></a>
+                                                <a href="/user/admin-panti/{{ $item['email']}}"  class="on-default detail-row">
+                                                    <button class="btn-xs btn-dark"><i class="fa fa-eye"></i> Detail</button></a>
                                             </td>
                                         </tr>
                                         @endforeach 
                                         
-                                    </tbody> --}}
+                                    </tbody> 
                                 </table>
                                 
                     </div>
