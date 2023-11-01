@@ -468,14 +468,17 @@ h6 {
 # Sections General
 --------------------------------------------------------------*/
 section {
-  padding: 60px 0;
+  padding: 50px 0;
   overflow: hidden;
 }
 
 .section-bg {
   background-color: #ffebab;
 }
-
+.section-bg2 {
+  padding: 40px 0;
+  background-color: #ffebab;
+}
 .section-title {
   text-align: center;
   padding-bottom: 30px;
@@ -492,6 +495,27 @@ section {
 
 .section-title p {
   margin-bottom: 0;
+}
+/*--------------------------------------------------------------
+# Card
+--------------------------------------------------------------*/
+.card-body {
+  font-family: "Poppins", sans-serif;
+}
+.card-body .card-title {
+  font-size: 18px;
+  font-weight: 500;
+  
+}
+.card-body .card-text {
+  font-size: 14px;
+  font-weight: 400;
+}
+.card-body a {
+  font-size: 12px;
+  font-weight: 400;
+  position: absolute;
+  bottom: 10px;
 }
 
 /*--------------------------------------------------------------
@@ -667,7 +691,34 @@ section {
     border-radius: 25px;
   }
 }
+/*--------------------------------------------------------------
+# Content Navbar
+--------------------------------------------------------------*/
+.content-navbar {
+  display: flex;
+  justify-content: space-between;
+  background-color: white; /* Mengganti warna latar belakang ke #ffebab */
+  text-align: center;
+  padding: 10px 0;
+}
 
+.content-navbar a {
+  font-family: "Raleway", sans-serif;
+  flex: 1;
+  color: #333;
+  padding: 10px;
+  text-decoration: none;
+  transition: color 0.3s; /* Transisi warna ketika dihover */
+  font-size: 15px;
+  color: #808696;
+  white-space: nowrap;
+  font-weight: bold;
+}
+
+.content-navbar a:hover {
+  color: #ffebab; /* Mengganti warna teks saat dihover */
+  border-bottom: 2px solid #ffebab;
+}
 /*--------------------------------------------------------------
 # Testimonials
 --------------------------------------------------------------*/

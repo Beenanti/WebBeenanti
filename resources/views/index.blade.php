@@ -23,7 +23,8 @@
   <link href="{{asset('asset/vendor/boxicons/css/boxicons.min.css')}}" rel="stylesheet">
   <link href="{{asset('asset/vendor/glightbox/css/glightbox.min.css')}}" rel="stylesheet">
   <link href="{{asset('asset/vendor/swiper/swiper-bundle.min.css')}}" rel="stylesheet">
-  
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
 
   <!-- Template Main CSS File -->
   <link href="{{asset('asset/css/stylesss.css')}}" rel="stylesheet">
@@ -54,9 +55,28 @@
           <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
           <li><a class="nav-link scrollto" href="#features">App Features</a></li>
           <li><a class="nav-link scrollto" href="#gallery">Gallery</a></li>
-          <li><a class="nav-link scrollto" href="#faq">F.A.Q</a></li> 
+          <li><a class="nav-link scrollto" href="#faq">F.A.Q</a></li>
           <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-          <li><a class="getstarted scrollto" href="#features">Get Started</a></li>
+          <li><a class="nav-link scrollto" href="/pantiweb">Panti Asuhan</a></li>
+          <?php if (session()->has('token')) { ?>
+            <li>
+              <div class="dropdown">
+                <a class="getstarted scrollto" href="/pantiweb">{{session('user')->nama_user}}</a>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                  <li><a class="dropdown-item" href="/riwayatDonasi">Riwayat Donasi</a></li>
+                  <li><a class="dropdown-item" href="/riwayatRelawan">Riwayat Relawan</a></li>
+                  <li><a class="dropdown-item" href="/riwayatKunjungan">Riwayat Kunjungan</a></li>
+                  <li>
+                    <form action="/logout" method="POST">
+                      @csrf
+                      <button type="submit" class="dropdown-item"><i class="fas fa-power-off"></i> Logout</button>
+                    </form>
+                </ul>
+              </div>
+            </li>
+          <?php } else { ?>
+            <li><a class="getstarted scrollto" href="/login">Get Started</a></li>
+          <?php } ?>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -141,7 +161,7 @@
 
         <div class="section-title">
           <h2>Gallery</h2>
-          <p>Tampilan antar muka pengguna untuk aplikasi Beenanti berbasis mobile</p>
+          <p>Tampilan Kegiatan-kegiatan Beenanti</p>
         </div>
 
       </div>
@@ -149,16 +169,16 @@
       <div class="container-fluid" data-aos="fade-up">
         <div class="gallery-slider swiper">
           <div class="swiper-wrapper">
-            <div class="swiper-slide"><a href="{{asset('asset/img/gallery/1.png')}}" class="gallery-lightbox" data-gall="gallery-carousel"><img src="{{asset('asset/img/gallery/1.png')}}" class="img-fluid" alt=""></a></div>
-            <div class="swiper-slide"><a href="{{asset('asset/img/gallery/2.png')}}" class="gallery-lightbox" data-gall="gallery-carousel"><img src="{{asset('asset/img/gallery/2.png')}}" class="img-fluid" alt=""></a></div>
-            <div class="swiper-slide"><a href="{{asset('asset/img/gallery/3.png')}}" class="gallery-lightbox" data-gall="gallery-carousel"><img src="{{asset('asset/img/gallery/3.png')}}" class="img-fluid" alt=""></a></div>
-            <div class="swiper-slide"><a href="{{asset('asset/img/gallery/4.png')}}" class="gallery-lightbox" data-gall="gallery-carousel"><img src="{{asset('asset/img/gallery/4.png')}}" class="img-fluid" alt=""></a></div>
-            <div class="swiper-slide"><a href="{{asset('asset/img/gallery/5.png')}}" class="gallery-lightbox" data-gall="gallery-carousel"><img src="{{asset('asset/img/gallery/5.png')}}" class="img-fluid" alt=""></a></div>
-            <div class="swiper-slide"><a href="{{asset('asset/img/gallery/6.png')}}" class="gallery-lightbox" data-gall="gallery-carousel"><img src="{{asset('asset/img/gallery/6.png')}}" class="img-fluid" alt=""></a></div>
-            <div class="swiper-slide"><a href="{{asset('asset/img/gallery/7.png')}}" class="gallery-lightbox" data-gall="gallery-carousel"><img src="{{asset('asset/img/gallery/7.png')}}" class="img-fluid" alt=""></a></div>
-            <div class="swiper-slide"><a href="{{asset('asset/img/gallery/8.png')}}" class="gallery-lightbox" data-gall="gallery-carousel"><img src="{{asset('asset/img/gallery/8.png')}}" class="img-fluid" alt=""></a></div>
-            <div class="swiper-slide"><a href="{{asset('asset/img/gallery/9.png')}}" class="gallery-lightbox" data-gall="gallery-carousel"><img src="{{asset('asset/img/gallery/9.png')}}" class="img-fluid" alt=""></a></div>
-            <div class="swiper-slide"><a href="{{asset('asset/img/gallery/10.png')}}" class="gallery-lightbox" data-gall="gallery-carousel"><img src="{{asset('asset/img/gallery/10.png')}}" class="img-fluid" alt=""></a></div>
+            <div class="swiper-slide"><a href="{{asset('asset/img/gallery/gal1.JPG')}}" class="gallery-lightbox" data-gall="gallery-carousel"><img src="{{asset('asset/img/gallery/gal1.JPG')}}" class="img-fluid" alt=""></a></div>
+            <div class="swiper-slide"><a href="{{asset('asset/img/gallery/gal2.JPG')}}" class="gallery-lightbox" data-gall="gallery-carousel"><img src="{{asset('asset/img/gallery/gal2.JPG')}}" class="img-fluid" alt=""></a></div>
+            <div class="swiper-slide"><a href="{{asset('asset/img/gallery/gal3.JPG')}}" class="gallery-lightbox" data-gall="gallery-carousel"><img src="{{asset('asset/img/gallery/gal3.JPG')}}" class="img-fluid" alt=""></a></div>
+            <div class="swiper-slide"><a href="{{asset('asset/img/gallery/gal4.JPG')}}" class="gallery-lightbox" data-gall="gallery-carousel"><img src="{{asset('asset/img/gallery/gal4.JPG')}}" class="img-fluid" alt=""></a></div>
+            <div class="swiper-slide"><a href="{{asset('asset/img/gallery/gal5.JPG')}}" class="gallery-lightbox" data-gall="gallery-carousel"><img src="{{asset('asset/img/gallery/gal5.JPG')}}" class="img-fluid" alt=""></a></div>
+            <div class="swiper-slide"><a href="{{asset('asset/img/gallery/gal6.JPG')}}" class="gallery-lightbox" data-gall="gallery-carousel"><img src="{{asset('asset/img/gallery/gal6.JPG')}}" class="img-fluid" alt=""></a></div>
+            <div class="swiper-slide"><a href="{{asset('asset/img/gallery/gal7.JPG')}}" class="gallery-lightbox" data-gall="gallery-carousel"><img src="{{asset('asset/img/gallery/gal7.JPG')}}" class="img-fluid" alt=""></a></div>
+            <div class="swiper-slide"><a href="{{asset('asset/img/gallery/gal11.jpg')}}" class="gallery-lightbox" data-gall="gallery-carousel"><img src="{{asset('asset/img/gallery/gal11.jpg')}}" class="img-fluid" alt=""></a></div>
+            <div class="swiper-slide"><a href="{{asset('asset/img/gallery/gal12.jpg')}}" class="gallery-lightbox" data-gall="gallery-carousel"><img src="{{asset('asset/img/gallery/gal12.jpg')}}" class="img-fluid" alt=""></a></div>
+            <div class="swiper-slide"><a href="{{asset('asset/img/gallery/gal10.jpg')}}" class="gallery-lightbox" data-gall="gallery-carousel"><img src="{{asset('asset/img/gallery/gal10.jpg')}}" class="img-fluid" alt=""></a></div>
           </div>
           <div class="swiper-pagination"></div>
         </div>
@@ -341,7 +361,7 @@
               <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#accordion-list-3" class="collapsed">Bagaimana cara menggakses aplikasi Beenanti? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
               <div id="accordion-list-3" class="collapse" data-bs-parent=".accordion-list">
                 <p>
-                  Aplikasi Beenanti tersedia dalam bentuk aplikasi android dan website. Untuk masyarakat umum dan lembaga organisasi dapat mendownload aplikasi Beenanti melalui Google Play. Khusus untuk pengelola panti asuhan disediakan aplikasi berbasis web yang digunakan untuk mengelola data panti asuhan terkait.
+                  Aplikasi Beenanti tersedia dalam bentuk situs web. Masyarakat umum dan lembaga organisasi dapat mengakses aplikasi Beenanti melalui peramban web yang terdapat pada perangkat Android ataupun PC/laptop.
                 </p>
               </div>
             </li>
@@ -375,29 +395,29 @@
           <div class="col-lg-6">
             <div class="row">
               <div class="col-lg-6 info">
-                <i class="bx bx-map"></i>
+                <a href="https://goo.gl/maps/jhRZjqFxB6ZmVveJ9"><i class="bx bx-map"></i></a>
                 <h4>Address</h4>
                 <p>Universitas Andalas,<br>Padang, Sumatera Barat</p>
               </div>
               <div class="col-lg-6 info">
-                <i class="bx bx-phone"></i>
+                <a href="https://wa.me/+6282170950159"><i class="bx bx-phone"></i></a>
                 <h4>Call Us</h4>
-                <p>+62 819 4789 3565<br>+62 823 8455 1108</p>
+                <p>+62 821 7095 0159</p>
               </div>
               <div class="col-lg-6 info">
-                <i class="bx bx-envelope"></i>
+                <a href="mailto:beenanti.id@gmail.com"><i class="bx bx-envelope"></i></a>
                 <h4>Email Us</h4>
                 <p>beenanti.id@gmail.com</p>
               </div>
               <div class="col-lg-6 info">
-                <i class="bx bx-time-five"></i>
+                <a href="https://instagram.com/beenanti.id"><i class="bx bxl-instagram"></i></a>
                 <h4>Instagram</h4>
                 <p>@beenanti.id</p>
               </div>
             </div>
           </div>
-        
-          
+
+
           <div class="col-lg-6">
             <form action="add-message.php" method="post" role="form" class="php-email-form" data-aos="fade-up">
               <div class="form-group">
